@@ -11,129 +11,126 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Noto Sans Bengali',sans-serif;}
 
 body{
-  background:url('https://i.postimg.cc/hjY7mk6H/cricket-bg.jpg') center/cover fixed;
+  background:#00121f;
   color:#e3edf5;
   padding:12px;
 }
 
-/* Stadium Lighting Effect */
-body::before{
-  content:"";
-  position:fixed;
-  top:0;left:0;width:100%;height:100%;
-  background:rgba(0,18,31,0.85);
-  backdrop-filter:blur(3px);
-  z-index:-1;
-}
-
 .container{
-  width:100%;max-width:900px;margin:auto;
-  background:rgba(3,37,56,0.75);
-  border-radius:18px;padding:18px;
+  width:100%;
+  max-width:920px;
+  margin:auto;
+  background:#032538dd;
+  border-radius:18px;
+  padding:18px;
   box-shadow:0 0 35px #00ffbb;
-  animation:fade .8s;
 }
 
-@keyframes fade{from{opacity:0;transform:scale(.96);}to{opacity:1;transform:scale(1);}}
+/*** Title ***/
+.title{
+  text-align:center;
+  font-size:32px;
+  font-weight:700;
+  color:#39ff14;
+  margin-bottom:4px;
+  text-shadow:0 0 14px #00ff99;
+}
+.sub{text-align:center;font-size:16px;color:#7ee5ff;margin-bottom:14px;}
 
-/* Heading */
-.title{text-align:center;color:#39ff14;font-size:32px;font-weight:700;text-shadow:0 0 18px #00ff9c;}
-.sub{text-align:center;font-size:18px;color:#7ee5ff;margin-bottom:12px;}
-
-/* Date Box */
+/*** Date Box ***/
 .date-box{
-  background:#022c41;padding:14px;text-align:center;
-  border-radius:12px;border:1px solid #39ff14;font-size:15px;
-  animation:glow 2.5s infinite;
+  background:#022c41;padding:14px;
+  text-align:center;border-radius:12px;
+  border:1px solid #39ff14;
+  animation: glow 2.5s infinite;
 }
-@keyframes glow{0%,100%{box-shadow:0 0 10px #00ffae;}50%{box-shadow:0 0 20px #00ff88;}}
+@keyframes glow{
+  0%,100%{box-shadow:0 0 10px #00ffae;}
+  50%{box-shadow:0 0 20px #00ff88;}
+}
 
-/* Countdown */
+/*** Countdown ***/
 .section-title{
   margin-top:25px;font-size:22px;font-weight:700;
   color:#00eaff;border-left:5px solid #39ff14;padding-left:10px;
 }
 .countdown{
-  display:flex;justify-content:center;gap:12px;
-  margin:12px 0;flex-wrap:wrap;
+  display:flex;justify-content:center;gap:14px;
+  margin:14px 0;flex-wrap:wrap;
 }
 .time-box{
-  background:#001c2e;padding:12px 20px;border-radius:12px;
-  border:1px solid #39ff14;text-align:center;
-  font-size:22px;color:#39ff14;font-weight:700;
-  text-shadow:0 0 6px #00ffaa;
+  background:#001c2e;
+  padding:14px 20px;
+  border-radius:12px;
+  border:1px solid #39ff14;
+  font-size:22px;
+  color:#39ff14;
+  font-weight:700;
 }
 
-/* Rules */
-.rule-box{background:#053041;margin-top:10px;padding:14px;border-radius:12px;border:1px solid #00e5ff;line-height:1.8;font-size:15px;}
-
-/* Match Schedule */
+/*** Table ***/
 .table{
-  width:100%;margin-top:18px;border-collapse:collapse;
+  width:100%;margin-top:16px;border-collapse:collapse;
   background:#03212e;border-radius:10px;overflow:hidden;
 }
 .table th{
-  background:#00ffae;color:#00332b;padding:10px;font-size:16px;
+  background:#00ffae;color:#00332b;padding:10px;
 }
 .table td{
-  padding:10px;text-align:center;border:1px solid #004a55;
+  padding:10px;text-align:center;
+  border:1px solid #003d46;
 }
 
-/* Sponsor */
+/*** Rules ***/
+.rule-box{
+  background:#042a38;margin-top:10px;
+  padding:14px;border-radius:12px;
+  border:1px solid #00e5ff;
+  line-height:1.7;
+}
+
+/*** Sponsor Cards Without Image ***/
 .sponsor-title{
-  margin-top:30px;text-align:center;
-  color:#39ff14;font-size:22px;font-weight:700;
+  margin-top:25px;text-align:center;
+  font-size:20px;font-weight:700;
+  color:#39ff14;
   text-shadow:0 0 8px #0f0;
 }
 .s-card{
-  display:flex;justify-content:space-between;
-  align-items:center;
   background:#063e56;
+  text-align:center;
   padding:12px;border-radius:12px;
   border:1px solid #00ffa3;margin:8px 0;
-  gap:8px;font-size:15px;
+  font-size:15px;
 }
-.sponsor-img{
-  width:55px;height:55px;border-radius:50%;
-  border:3px solid #39ff14;
-}
+
+/*** VIP Tags ***/
 .tag{
+  display:inline-block;margin-top:4px;
   padding:6px 12px;border-radius:10px;
-  font-size:12px;font-weight:700;color:#000;
+  font-size:11px;font-weight:700;color:#000;
 }
 .Diamond{background:#89fff7;}
 .Gold{background:#ffeb57;}
 .Silver{background:#d7e6fc;}
 .Bronze{background:#eeb48a;}
 
-/* Contact */
+/*** Contact Box ***/
 .contact{
-  margin-top:25px;background:#03212e;border-radius:12px;
-  padding:16px;border:1px solid #39ff14;line-height:1.8;
+  margin-top:25px;background:#03212e;
+  border-radius:12px;padding:16px;
+  border:1px solid #39ff14;
+  line-height:1.7;
 }
 
-/* Buttons */
+/*** Button ***/
 .btn{
-  display:inline-block;background:#39ff14;color:#002419;
-  padding:10px 16px;border-radius:8px;font-weight:700;
-  text-decoration:none;margin-top:12px;font-size:15px;
+  display:inline-block;background:#39ff14;
+  padding:10px 16px;color:#002419;
+  border-radius:8px;font-weight:700;
+  text-decoration:none;margin-top:12px;
 }
 .btn:hover{filter:brightness(1.2)}
-
-/* Floating WhatsApp */
-.float-whatsapp{
-  position:fixed;bottom:20px;right:20px;
-  background:#25d366;width:52px;height:52px;
-  display:flex;justify-content:center;align-items:center;
-  border-radius:50%;font-size:26px;color:#fff;
-  text-decoration:none;box-shadow:0 0 15px #00ff81;
-}
-
-/* Mobile Optimize */
-@media(max-width:500px){
-  .title{font-size:26px;}
-  .s-card{flex-direction:column;text-align:center;}
-}
 </style>
 </head>
 
@@ -141,16 +138,16 @@ body::before{
 
 <div class="container">
 
-<div class="title">পায়রাউড়া ক্রিকেট চ্যাম্পিয়নশিপ 🏆🏏</div>
+<div class="title">🏆 পায়রাউড়া ক্রিকেট চ্যাম্পিয়নশিপ 🏏</div>
 <div class="sub">আয়োজক — Black Force 007</div>
 
 <div class="date-box">
 📅 ১০ ও ১১ জানুয়ারি ২০২৬<br>
-💸 এন্ট্রি ফি: ৫০০০ টাকা (অগ্রিম)<br>
+💸 এন্ট্রি ফি: ৫০০০ টাকা <br>
 🏆 Winner: ২৬,০০১ টাকা | Runner: ১৯,০০১ টাকা
 </div>
 
-<div class="section-title">⏳ টুর্নামেন্ট শুরু হতে বাকি</div>
+<div class="section-title">⏳ কাউন্টডাউন</div>
 <div class="countdown">
 <div class="time-box" id="days">00</div>
 <div class="time-box" id="hours">00</div>
@@ -159,65 +156,59 @@ body::before{
 </div>
 
 <script>
-var countDownDate = new Date("Jan 10, 2026 10:00:00").getTime();
-setInterval(function(){
-var now = new Date().getTime();
-var d = countDownDate-now;
-document.getElementById("days").innerHTML = Math.floor(d/(1000*60*60*24))+" দিন";
-document.getElementById("hours").innerHTML = Math.floor((d%(1000*60*60*24))/(1000*60*60))+" ঘন্টা";
-document.getElementById("minutes").innerHTML = Math.floor((d%(1000*60*60))/(1000*60))+" মিনিট";
-document.getElementById("seconds").innerHTML = Math.floor((d%(1000*60))/1000)+" সেকেন্ড";
+var eventDate=new Date("Jan 10, 2026 10:00:00").getTime();
+setInterval(()=>{
+var now=new Date().getTime();
+var d=eventDate-now;
+document.getElementById("days").innerHTML=Math.floor(d/(1000*60*60*24))+" দিন";
+document.getElementById("hours").innerHTML=Math.floor((d%(1000*60*60*24))/(1000*60*60))+" ঘন্টা";
+document.getElementById("minutes").innerHTML=Math.floor((d%(1000*60*60))/(1000*60))+" মিনিট";
+document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000)+" সেকেন্ড";
 },1000);
 </script>
 
-<div class="section-title">🎯 ম্যাচ সময়সূচী</div>
+<div class="section-title">🎯 ম্যাচ সময়সূচী</div>
 <table class="table">
 <tr><th>তারিখ</th><th>সময়</th><th>ম্যাচ</th></tr>
-<tr><td>১০ জানুয়ারি</td><td>সকাল ১০টা</td><td>Match 1</td></tr>
-<tr><td>১০ জানুয়ারি</td><td>দুপুর ১২টা</td><td>Match 2</td></tr>
-<tr><td>১১ জানুয়ারি</td><td>সকাল ১০টা</td><td>Semi Final</td></tr>
-<tr><td>১১ জানুয়ারি</td><td>দুপুর ১টা</td><td>Final</td></tr>
+<tr><td>১০ জানুয়ারি</td><td>10:00 AM</td><td>Match 1</td></tr>
+<tr><td>১০ জানুয়ারি</td><td>12:00 PM</td><td>Match 2</td></tr>
+<tr><td>১১ জানুয়ারি</td><td>10:00 AM</td><td>Semi Final</td></tr>
+<tr><td>১১ জানুয়ারি</td><td>01:00 PM</td><td>Final</td></tr>
 </table>
 
-<div class="section-title">📌 নিয়ামাবলী</div>
+<div class="section-title">📌 নিয়মাবলী</div>
 <div class="rule-box">
 ✔ লীগ সিস্টেমে খেলা<br>
 ✔ ৮টি দল ⚡<br>
-✔ সবুজ হেডলি বল ব্যবহার হবে 🟢<br>
+✔ সবুজ হেডলি বল 🟢<br>
 ✔ Umpire এর সিদ্ধান্ত চূড়ান্ত 📌<br>
 ✔ প্রতিটি ম্যাচে পুরস্কার 🏅<br>
-✔ ফাইনালে উভয় টিম জার্সি 🎽<br>
+✔ ফাইনালে উভয় টিমকে জার্সি 🎽<br>
 </div>
 
 <div class="sponsor-title">💎 Diamond Sponsor</div>
-<div class="s-card"><img src="https://i.postimg.cc/BvbvHxTx/user.png" class="sponsor-img">আজিম — ২ দিনের খাওয়া-দাওয়া <div class="tag Diamond">Diamond</div></div>
+<div class="s-card">আজিম — ২ দিনের খাওয়া-দাওয়া <div class="tag Diamond">Diamond</div></div>
 
 <div class="sponsor-title">🥇 Gold Sponsor</div>
-<div class="s-card"><img src="https://i.postimg.cc/BvbvHxTx/user.png" class="sponsor-img">শহিদুল — JBL সাউন্ড <div class="tag Gold">Gold</div></div>
-<div class="s-card"><img src="https://i.postimg.cc/BvbvHxTx/user.png" class="sponsor-img">ফিরোজ + বোরহান + সানি + বারেক — YouTube লাইভ <div class="tag Gold">Gold</div></div>
+<div class="s-card">শহিদুল — JBL সাউন্ড <div class="tag Gold">Gold</div></div>
+<div class="s-card">ফিরোজ + বোরহান + সানি + বারেক — YouTube লাইভ <div class="tag Gold">Gold</div></div>
 
 <div class="sponsor-title">🥈 Silver Sponsor</div>
-<div class="s-card"><img src="https://i.postimg.cc/BvbvHxTx/user.png">শেখ বাবুসোনা + আক্তার — প্যান্ডেল<div class="tag Silver">Silver</div></div>
-<div class="s-card"><img src="https://i.postimg.cc/BvbvHxTx/user.png">হাসিবুল — ট্রফি<div class="tag Silver">Silver</div></div>
-<div class="s-card"><img src="https://i.postimg.cc/BvbvHxTx/user.png">রেজওয়ান — জার্সি<div class="tag Silver">Silver</div></div>
+<div class="s-card">বাবুসোনা + আক্তার — প্যান্ডেল<div class="tag Silver">Silver</div></div>
+<div class="s-card">হাসিবুল — ট্রফি<div class="tag Silver">Silver</div></div>
 
 <div class="sponsor-title">🥉 Bronze Sponsor</div>
-<div class="s-card"><img src="https://i.postimg.cc/BvbvHxTx/user.png">মহসিন — কমেন্টেটর<div class="tag Bronze">Bronze</div></div>
-<div class="s-card"><img src="https://i.postimg.cc/BvbvHxTx/user.png">সমীর — এন্ট্রি ফি ৫০০০<div class="tag Bronze">Bronze</div></div>
-<div class="s-card"><img src="https://i.postimg.cc/BvbvHxTx/user.png">আফসার — টিফিন<div class="tag Bronze">Bronze</div></div>
+<div class="s-card">মহসিন — কমেন্টেটর<div class="tag Bronze">Bronze</div></div>
+<div class="s-card">আফসার — টিফিন<div class="tag Bronze">Bronze</div></div>
 
 <a class="btn" href="https://wa.me/916355526665?text=আমি%20স্পনসর%20হতে%20চাই" target="_blank">✨ স্পনসর করতে চাই</a>
 
 <div class="contact">
 📞 সেক্রেটারি: <b>9748999524</b><br>
-👉 WhatsApp: <b>919748999524</b><br>
 📧 Email: <b>blackforce007.official@gmail.com</b>
 </div>
 
 </div>
-
-<!-- Floating WhatsApp -->
-<a class="float-whatsapp" href="https://wa.me/916355526665" target="_blank">📞</a>
 
 </body>
 </html>
