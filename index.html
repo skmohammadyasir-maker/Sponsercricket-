@@ -7,135 +7,53 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&display=swap');
-
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Noto Sans Bengali',sans-serif;}
-
-body{
-  background:#00121f;
-  color:#e3edf5;
-  padding:12px;
-}
-
-.container{
-  width:100%;
-  max-width:920px;
-  margin:auto;
-  background:#032538dd;
-  border-radius:18px;
-  padding:18px;
-  box-shadow:0 0 35px #00ffbb;
-}
-
-/*** Title ***/
-.title{
-  text-align:center;
-  font-size:32px;
-  font-weight:700;
-  color:#39ff14;
-  margin-bottom:4px;
-  text-shadow:0 0 14px #00ff99;
-}
+body{background:#00121f;color:#e3edf5;padding:12px;}
+.container{width:100%;max-width:920px;margin:auto;background:#032538dd;border-radius:18px;
+padding:18px;box-shadow:0 0 35px #00ffbb;}
+.title{text-align:center;font-size:32px;font-weight:700;color:#39ff14;margin-bottom:4px;text-shadow:0 0 14px #00ff99;}
 .sub{text-align:center;font-size:16px;color:#7ee5ff;margin-bottom:14px;}
 
-/*** Date Box ***/
-.date-box{
-  background:#022c41;padding:14px;
-  text-align:center;border-radius:12px;
-  border:1px solid #39ff14;
-  animation: glow 2.5s infinite;
-}
-@keyframes glow{
-  0%,100%{box-shadow:0 0 10px #00ffae;}
-  50%{box-shadow:0 0 20px #00ff88;}
+.date-box{background:#022c41;padding:14px;text-align:center;border-radius:12px;border:1px solid #39ff14;
+animation: glow 2.5s infinite;}
+@keyframes glow{0%,100%{box-shadow:0 0 10px #00ffae;}50%{box-shadow:0 0 20px #00ff88;}}
+
+.section-title{margin-top:25px;font-size:22px;font-weight:700;color:#00eaff;border-left:5px solid #39ff14;padding-left:10px;}
+.countdown{display:flex;justify-content:center;gap:14px;margin:14px 0;flex-wrap:wrap;}
+.time-box{background:#001c2e;padding:14px 20px;border-radius:12px;border:1px solid #39ff14;
+font-size:22px;color:#39ff14;font-weight:700;}
+
+.table{width:100%;margin-top:16px;border-collapse:collapse;background:#03212e;border-radius:10px;overflow:hidden;}
+.table th{background:#00ffae;color:#00332b;padding:10px;}
+.table td{padding:10px;text-align:center;border:1px solid #003d46;}
+
+.rule-box{background:#042a38;margin-top:10px;padding:14px;border-radius:12px;border:1px solid #00e5ff;line-height:1.7;}
+
+.sponsor-title{margin-top:25px;text-align:center;font-size:20px;font-weight:700;color:#39ff14;text-shadow:0 0 8px #0f0;}
+
+.s-card{background:#063e56;text-align:center;padding:12px;border-radius:12px;border:1px solid #00ffa3;margin:8px 0;
+font-size:15px;position:relative;}
+
+.star-btn{
+  position:absolute;right:10px;top:10px;font-size:20px;
+  cursor:pointer;user-select:none;
+  color:#ffd700;
 }
 
-/*** Countdown ***/
-.section-title{
-  margin-top:25px;font-size:22px;font-weight:700;
-  color:#00eaff;border-left:5px solid #39ff14;padding-left:10px;
-}
-.countdown{
-  display:flex;justify-content:center;gap:14px;
-  margin:14px 0;flex-wrap:wrap;
-}
-.time-box{
-  background:#001c2e;
-  padding:14px 20px;
-  border-radius:12px;
-  border:1px solid #39ff14;
-  font-size:22px;
-  color:#39ff14;
-  font-weight:700;
-}
-
-/*** Table ***/
-.table{
-  width:100%;margin-top:16px;border-collapse:collapse;
-  background:#03212e;border-radius:10px;overflow:hidden;
-}
-.table th{
-  background:#00ffae;color:#00332b;padding:10px;
-}
-.table td{
-  padding:10px;text-align:center;
-  border:1px solid #003d46;
-}
-
-/*** Rules ***/
-.rule-box{
-  background:#042a38;margin-top:10px;
-  padding:14px;border-radius:12px;
-  border:1px solid #00e5ff;
-  line-height:1.7;
-}
-
-/*** Sponsor Cards Without Image ***/
-.sponsor-title{
-  margin-top:25px;text-align:center;
-  font-size:20px;font-weight:700;
-  color:#39ff14;
-  text-shadow:0 0 8px #0f0;
-}
-.s-card{
-  background:#063e56;
-  text-align:center;
-  padding:12px;border-radius:12px;
-  border:1px solid #00ffa3;margin:8px 0;
-  font-size:15px;
-}
-
-/*** VIP Tags ***/
-.tag{
-  display:inline-block;margin-top:4px;
-  padding:6px 12px;border-radius:10px;
-  font-size:11px;font-weight:700;color:#000;
-}
+.tag{display:inline-block;margin-top:4px;padding:6px 12px;border-radius:10px;font-size:11px;font-weight:700;color:#000;}
 .Diamond{background:#89fff7;}
 .Gold{background:#ffeb57;}
 .Silver{background:#d7e6fc;}
 .Bronze{background:#eeb48a;}
 
-/*** Contact Box ***/
-.contact{
-  margin-top:25px;background:#03212e;
-  border-radius:12px;padding:16px;
-  border:1px solid #39ff14;
-  line-height:1.7;
-}
-
-/*** Button ***/
-.btn{
-  display:inline-block;background:#39ff14;
-  padding:10px 16px;color:#002419;
-  border-radius:8px;font-weight:700;
-  text-decoration:none;margin-top:12px;
-}
+.contact{margin-top:25px;background:#03212e;border-radius:12px;padding:16px;border:1px solid #39ff14;line-height:1.7;}
+.btn{display:inline-block;background:#39ff14;padding:10px 16px;color:#002419;border-radius:8px;font-weight:700;
+text-decoration:none;margin-top:12px;}
 .btn:hover{filter:brightness(1.2)}
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
 <div class="title">🏆 পায়রাউড়া ক্রিকেট চ্যাম্পিয়নশিপ 🏏</div>
@@ -154,18 +72,6 @@ body{
 <div class="time-box" id="minutes">00</div>
 <div class="time-box" id="seconds">00</div>
 </div>
-
-<script>
-var eventDate=new Date("Jan 10, 2026 10:00:00").getTime();
-setInterval(()=>{
-var now=new Date().getTime();
-var d=eventDate-now;
-document.getElementById("days").innerHTML=Math.floor(d/(1000*60*60*24))+" দিন";
-document.getElementById("hours").innerHTML=Math.floor((d%(1000*60*60*24))/(1000*60*60))+" ঘন্টা";
-document.getElementById("minutes").innerHTML=Math.floor((d%(1000*60*60))/(1000*60))+" মিনিট";
-document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000)+" সেকেন্ড";
-},1000);
-</script>
 
 <div class="section-title">🎯 ম্যাচ সময়সূচী</div>
 <table class="table">
@@ -186,20 +92,21 @@ document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000)+" �
 ✔ ফাইনালে উভয় টিমকে জার্সি 🎽<br>
 </div>
 
+<!-- SPONSORED SECTION WITH STARS -->
 <div class="sponsor-title">💎 Diamond Sponsor</div>
-<div class="s-card">শেখ আজিম — ২ দিনের খাওয়া-দাওয়া <div class="tag Diamond">Diamond</div></div>
+<div class="s-card" data-id="s1">⭐ Sheikh Ajim <div class="tag Diamond">Diamond</div><span class="star-btn">★</span></div>
 
 <div class="sponsor-title">🥇 Gold Sponsor</div>
-<div class="s-card">শেখ সোইদুল — JBL সাউন্ড <div class="tag Gold">Gold</div></div>
-<div class="s-card">শেখ ফিরোজ + শেখ বোরহান + শেখ সানি + শেখ বারেক — YouTube লাইভ <div class="tag Gold">Gold</div></div>
+<div class="s-card" data-id="s2">⭐ Sheikh Soidul <div class="tag Gold">Gold</div><span class="star-btn">★</span></div>
+<div class="s-card" data-id="s3">⭐ Sheikh Firoz + Sheikh Borhan + Sheikh Sani + Sheikh Barek <div class="tag Gold">Gold</div><span class="star-btn">★</span></div>
 
 <div class="sponsor-title">🥈 Silver Sponsor</div>
-<div class="s-card">শেখ বাবুসোনা + শেখ আক্তার — প্যান্ডেল<div class="tag Silver">Silver</div></div>
-<div class="s-card">শেখ হাসিবুল — ট্রফি<div class="tag Silver">Silver</div></div>
+<div class="s-card" data-id="s4">⭐ Sheikh Babusona + Sheikh Aktar <div class="tag Silver">Silver</div><span class="star-btn">★</span></div>
+<div class="s-card" data-id="s5">⭐ Sheikh Hasibul <div class="tag Silver">Silver</div><span class="star-btn">★</span></div>
 
 <div class="sponsor-title">🥉 Bronze Sponsor</div>
-<div class="s-card">শেখ মহসিন মিদ্দা — কমেন্টেটর<div class="tag Bronze">Bronze</div></div>
-<div class="s-card">শেখ আফসার — টিফিন<div class="tag Bronze">Bronze</div></div>
+<div class="s-card" data-id="s6">⭐ Sheikh Mohsin Midda <div class="tag Bronze">Bronze</div><span class="star-btn">★</span></div>
+<div class="s-card" data-id="s7">⭐ Sheikh Afsar <div class="tag Bronze">Bronze</div><span class="star-btn">★</span></div>
 
 <a class="btn" href="https://wa.me/916355526665?text=আমি%20স্পনসর%20হতে%20চাই" target="_blank">✨ স্পনসর করতে চাই</a>
 
@@ -209,6 +116,33 @@ document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000)+" �
 </div>
 
 </div>
+
+<script>
+// Countdown (unchanged)
+var eventDate=new Date("Jan 10, 2026 10:00:00").getTime();
+setInterval(()=>{
+var now=new Date().getTime();
+var d=eventDate-now;
+document.getElementById("days").innerHTML=Math.floor(d/(1000*60*60*24))+" দিন";
+document.getElementById("hours").innerHTML=Math.floor((d%(1000*60*60*24))/(1000*60*60))+" ঘন্টা";
+document.getElementById("minutes").innerHTML=Math.floor((d%(1000*60*60))/(1000*60))+" মিনিট";
+document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000)+" সেকেন্ড";
+},1000);
+
+// ⭐ STAR SYSTEM 
+document.querySelectorAll(".s-card").forEach(card=>{
+  let id = card.getAttribute("data-id");
+  let starBtn = card.querySelector(".star-btn");
+  let count = localStorage.getItem(id) || 0;
+  starBtn.innerText = "★ " + count;
+
+  starBtn.addEventListener("click", ()=>{
+    count++;
+    localStorage.setItem(id, count);
+    starBtn.innerText = "★ " + count;
+  });
+});
+</script>
 
 </body>
 </html>
