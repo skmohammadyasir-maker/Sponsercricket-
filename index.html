@@ -132,12 +132,13 @@ body{
 }
 .btn:hover{filter:brightness(1.2)}
 </style>
-</head>
 
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+</head>
 <body>
-  <!-- Firebase + Realtime JS -->
-<script type="module" src="firebase-config.js"></script>
-<script type="module" src="realtime.js"></script>
 
 <div class="container">
 
@@ -189,6 +190,7 @@ document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000)+" �
 ✔ ফাইনালে উভয় টিমকে জার্সি 🎽<br>
 </div>
 
+<!-- 🔹 Sponsors Star System Start -->
 <div class="sponsor-title">💎 Diamond Sponsor</div>
 <div class="s-card">শেখ আজিম — ২ দিনের খাওয়া-দাওয়া <div class="tag Diamond">Diamond</div></div>
 
@@ -208,15 +210,8 @@ document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000)+" �
 
 <a class="btn" href="https://wa.me/916355526665?text=আমি%20স্পনসর%20হতে%20চাই" target="_blank">✨ স্পনসর করতে চাই</a>
 
-</div>
-
-</body>
-  <!-- ⚡ Black Force 007 Sponsors Star System Start -->
-<h2 style="text-align:center; margin-top:25px; color:#39ff14;">💎 স্পনসরদের স্টার দিন</h2>
-
-<div id="sponsor-list" style="max-width:900px; margin:auto;">
-  <!-- Sponsors will load here -->
-</div>
+<!-- 🔹 Firebase Realtime Sponsor Star System -->
+<div id="sponsor-list" style="margin-top:25px;"></div>
 
 <style>
   .sponsor { background:#022c41; margin:10px 0; padding:12px; border-radius:10px; display:flex; justify-content:space-between; align-items:center; }
@@ -227,7 +222,6 @@ document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000)+" �
 </style>
 
 <script>
-  // 🔹 Firebase Config (তোমার Web App থেকে Ready-to-use)
   const firebaseConfig = {
     apiKey: "AIzaSyDAvBXLhFOcFRvfv5mcPDylmNFTU5gFr-Y",
     authDomain: "blackforce007-cricket-time.firebaseapp.com",
@@ -239,26 +233,14 @@ document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000)+" �
     measurementId: "G-149FVV53Y6"
   };
 
-  // Initialize Firebase
   const app = firebase.initializeApp(firebaseConfig);
   const db = firebase.database();
 
-  // স্পনসর লিস্ট
   const sponsors = [
-    "শেখ আজিম",
-    "শেখ সোইদুল",
-    "ফিরোজ মল্লিক",
-    "বোরহান মল্লিক",
-    "সানি মোল্লা",
-    "বারেক মল্লিক",
-    "রহমান মল্লিক",
-    "শেখ সমীর",
-    "শেখ বাবুসোনা",
-    "শেখ আক্তার",
-    "শেখ হাসিবুল",
-    "শেখ রিজুয়ান",
-    "শেখ মহসিন মিদ্দা",
-    "শেখ আফসার"
+    "শেখ আজিম","শেখ সোইদুল","ফিরোজ মল্লিক","বোরহান মল্লিক",
+    "সানি মোল্লা","বারেক মল্লিক","রহমান মল্লিক","শেখ সমীর",
+    "শেখ বাবুসোনা","শেখ আক্তার","শেখ হাসিবুল","শেখ রিজুয়ান",
+    "শেখ মহসিন মিদ্দা","শেখ আফসার"
   ];
 
   const sponsorListDiv = document.getElementById('sponsor-list');
@@ -273,7 +255,6 @@ document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000)+" �
     `;
     sponsorListDiv.appendChild(div);
 
-    // Real-time listener
     db.ref('sponsors/' + name).on('value', snapshot => {
       const count = snapshot.val() || 0;
       document.getElementById('stars-' + name).innerText = `⭐ ${count}`;
@@ -285,89 +266,33 @@ document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000)+" �
     starRef.transaction(current => (current || 0) + 1);
   }
 </script>
-<!-- ⚡ Black Force 007 Sponsors Star System End -->
-  <!-- ⚡ Black Force 007 Teams Table Start -->
+
+</div>
+
+<!-- Teams Table Start -->
 <div class="teams-container">
   <h3 class="teams-title">🏏 অংশগ্রহণকারী টিমসমূহ 🏏</h3>
   <div class="teams-grid">
-    <div class="team-card">
-      <span class="team-name team1">ABIR Warriors Payment</span>
-      <span class="vs">VS</span>
-      <span class="team-name team2">Hasib (XI)</span>
-    </div>
-    <div class="team-card">
-      <span class="team-name team1">Dedhara</span>
-      <span class="vs">VS</span>
-      <span class="team-name team2">Hooghly United</span>
-    </div>
-    <div class="team-card">
-      <span class="team-name team1">Maa Kali Furniture Kolkata</span>
-      <span class="vs">VS</span>
-      <span class="team-name team2">Kalo Bahini</span>
-    </div>
-    <div class="team-card">
-      <span class="team-name team1">Rahul & Papai XI</span>
-      <span class="vs">VS</span>
-      <span class="team-name team2">Children Jayed 11</span>
-    </div>
-    <div class="team-card">
-      <span class="team-name team1">Ajabnagar</span>
-      <span class="vs">VS</span>
-      <span class="team-name team2">TBD</span>
-    </div>
+    <div class="team-card"><span class="team-name team1">ABIR Warriors Payment</span><span class="vs">VS</span><span class="team-name team2">Hasib (XI)</span></div>
+    <div class="team-card"><span class="team-name team1">Dedhara</span><span class="vs">VS</span><span class="team-name team2">Hooghly United</span></div>
+    <div class="team-card"><span class="team-name team1">Maa Kali Furniture Kolkata</span><span class="vs">VS</span><span class="team-name team2">Kalo Bahini</span></div>
+    <div class="team-card"><span class="team-name team1">Rahul & Papai XI</span><span class="vs">VS</span><span class="team-name team2">Children Jayed 11</span></div>
+    <div class="team-card"><span class="team-name team1">Ajabnagar</span><span class="vs">VS</span><span class="team-name team2">TBD</span></div>
   </div>
 </div>
 
 <style>
-.teams-container {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 12px;
-  background: #00121f;
-  border-radius: 12px;
-  border: 2px solid #39ff14;
-  box-shadow: 0 0 25px #00ffbb;
-  font-family: 'Noto Sans Bengali', sans-serif;
-}
-.teams-title {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 700;
-  color: #39ff14;
-  text-shadow: 0 0 8px #00ff88;
-  margin-bottom: 16px;
-}
-.teams-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
-}
-.team-card {
-  background: #022c41;
-  padding: 8px 6px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 13px;
-  border-radius: 10px;
-  border: 1px solid #39ff14;
-  box-shadow: 0 0 10px #00ff88;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.team-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 18px #39ff14;
-}
-.team-name.team1 { color: #ffe57f; }   /* Yellow-ish */
-.team-name.team2 { color: #ff6f61; }   /* Red-ish */
-.vs { color: #00e5ff; font-weight: 700; } /* Cyan for VS */
+.teams-container { max-width:900px;margin:20px auto;padding:12px;background:#00121f;border-radius:12px;border:2px solid #39ff14;box-shadow:0 0 25px #00ffbb; }
+.teams-title { text-align:center;font-size:20px;font-weight:700;color:#39ff14;text-shadow:0 0 8px #00ff88;margin-bottom:16px; }
+.teams-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px; }
+.team-card { background:#022c41;padding:8px 6px;text-align:center;font-weight:600;font-size:13px;border-radius:10px;border:1px solid #39ff14;box-shadow:0 0 10px #00ff88;display:flex;justify-content:center;align-items:center;gap:6px;transition:transform 0.3s,box-shadow 0.3s; }
+.team-card:hover { transform:scale(1.05);box-shadow:0 0 18px #39ff14; }
+.team-name.team1 { color:#ffe57f; } 
+.team-name.team2 { color:#ff6f61; } 
+.vs { color:#00e5ff; font-weight:700; }
 </style>
-<!-- ⚡ Black Force 007 Teams Table End -->
 
-<!-- ⚡ Stay Connected Section Start -->
+<!-- Stay Connected Section -->
 <h3 style="font-size:16px; color:#ffe27a; font-weight:900; text-shadow:0 0 16px #ffdf70; text-align:center; margin-top:20px;">
   ⭐ Stay Connected With Black Force 007 ⭐
 </h3>
@@ -403,9 +328,4 @@ document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000)+" �
   📧 Email: <b>blackforce007.official@gmail.com</b>
 </p>
 
-<hr style="border:0; height:2px; background:#f7d773; width:85%; margin:20px auto; box-shadow:0 0 14px #ffe27a;">
-
-<p style="font-size:13px; color:#ffe4a8; text-align:center;">
-  © 2026 Black Force 007 Club 🏏  <br>🛠 Designed & Powered by: <b>Black Force Media Team 🔥</b>
-</p>
-<!-- ⚡ Stay Connected Section End -->
+<hr style="border:0; height:2px; background:#f7d773; width:
