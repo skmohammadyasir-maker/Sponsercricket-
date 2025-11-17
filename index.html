@@ -215,11 +215,31 @@ document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000)+" �
 <div class="teams-container">
   <h3 class="teams-title">🏏 অংশগ্রহণকারী টিমসমূহ 🏏</h3>
   <div class="teams-grid">
-    <div class="team-card">ABIR Warriors Payment VS Hasib (XI)</div>
-    <div class="team-card">Dedhara VS Hooghly United</div>
-    <div class="team-card">Maa Kali Furniture Kolkata VS Kalo Bahini</div>
-    <div class="team-card">Rahul & Papai XI VS Children Jayed 11</div>
-    <div class="team-card">Ajabnagar VS TBD</div>
+    <div class="team-card">
+      <span class="team-name team1">ABIR Warriors Payment</span>
+      <span class="vs">VS</span>
+      <span class="team-name team2">Hasib (XI)</span>
+    </div>
+    <div class="team-card">
+      <span class="team-name team1">Dedhara</span>
+      <span class="vs">VS</span>
+      <span class="team-name team2">Hooghly United</span>
+    </div>
+    <div class="team-card">
+      <span class="team-name team1">Maa Kali Furniture Kolkata</span>
+      <span class="vs">VS</span>
+      <span class="team-name team2">Kalo Bahini</span>
+    </div>
+    <div class="team-card">
+      <span class="team-name team1">Rahul & Papai XI</span>
+      <span class="vs">VS</span>
+      <span class="team-name team2">Children Jayed 11</span>
+    </div>
+    <div class="team-card">
+      <span class="team-name team1">Ajabnagar</span>
+      <span class="vs">VS</span>
+      <span class="team-name team2">TBD</span>
+    </div>
   </div>
 </div>
 
@@ -230,48 +250,58 @@ document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000)+" �
   margin: 20px auto;
   padding: 12px;
   background: #00121f;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 2px solid #39ff14;
-  box-shadow: 0 0 20px #00ffbb;
+  box-shadow: 0 0 25px #00ffbb;
   font-family: 'Noto Sans Bengali', sans-serif;
 }
 
 /* Title */
 .teams-title {
   text-align: center;
-  font-size: 18px;  /* ছোটো সাইজ */
+  font-size: 20px;  
   font-weight: 700;
   color: #39ff14;
-  text-shadow: 0 0 6px #00ff88;
-  margin-bottom: 12px;
+  text-shadow: 0 0 8px #00ff88;
+  margin-bottom: 16px;
 }
 
 /* Teams Grid */
 .teams-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
 }
 
 /* Individual Team Card */
 .team-card {
   background: #022c41;
-  color: #ffe57f;
-  padding: 8px 6px;  /* ছোটো padding */
+  padding: 8px 6px;
   text-align: center;
   font-weight: 600;
-  font-size: 12px;   /* ছোটো ফন্ট */
-  border-radius: 8px;
+  font-size: 13px;
+  border-radius: 10px;
   border: 1px solid #39ff14;
-  box-shadow: 0 0 8px #00ff88;
+  box-shadow: 0 0 10px #00ff88;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 /* Hover Animation */
 .team-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 16px #39ff14;
+  box-shadow: 0 0 18px #39ff14;
 }
+
+/* Team Name Colors */
+.team-name.team1 { color: #ffe57f; }   /* Yellow-ish */
+.team-name.team2 { color: #ff6f61; }   /* Red-ish */
+.vs { color: #00e5ff; font-weight: 700; } /* Cyan for VS */
+</style>
+<!-- ⚡ Black Force 007 Teams Table End -->
 </style>
 <!-- ⚡ Black Force 007 Teams Table End -->m:16px; color:#ffe27a; font-weight:900; text-shadow:0 0 16px #ffdf70;">
         ⭐ Stay Connected With Black Force 007 ⭐
