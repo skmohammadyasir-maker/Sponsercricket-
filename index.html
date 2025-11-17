@@ -190,53 +190,23 @@ document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000)+" �
 ✔ ফাইনালে উভয় টিমকে জার্সি 🎽<br>
 </div>
 
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyDAvBXLhFOcFRvfv5mcPDylmNFTU5gFr-Y",
-    authDomain: "blackforce007-cricket-time.firebaseapp.com",
-    databaseURL: "https://blackforce007-cricket-time-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "blackforce007-cricket-time",
-    storageBucket: "blackforce007-cricket-time.firebasestorage.app",
-    messagingSenderId: "215574154214",
-    appId: "1:215574154214:web:0218e9009f5e24de852427",
-    measurementId: "G-149FVV53Y6"
-  };
+<!-- 🔹 Sponsors Star System Start -->
+<div class="sponsor-title">💎 Diamond Sponsor</div>
+<div class="s-card">শেখ আজিম — ২ দিনের খাওয়া-দাওয়া <div class="tag Diamond">Diamond</div></div>
 
-  const app = firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
+<div class="sponsor-title">🥇 Gold Sponsor</div>
+<div class="s-card">শেখ সোইদুল — JBL সাউন্ড <div class="tag Gold">Gold</div></div>
+<div class="s-card">ফিরোজ মল্লিক + বোরহান মল্লিক + সানি মোল্লা + বারেক মল্লিক + রহমান মল্লিক YouTube লাইভ <div class="tag Gold">Gold</div></div>
+<div class="s-card">শেখ সমীর — এন্ট্রি টাকা <div class="tag Gold">Gold</div></div>
+  
+<div class="sponsor-title">🥈 Silver Sponsor</div>
+<div class="s-card">শেখ বাবুসোনা + শেখ আক্তার — প্যান্ডেল <div class="tag Silver">Silver</div></div>
+<div class="s-card">শেখ হাসিবুল — ট্রফি <div class="tag Silver">Silver</div></div>
+<div class="s-card">শেখ রিজুয়ান — জার্সি <div class="tag Silver">Silver</div></div>
 
-  // 🔥 Updated Sponsor List
-  const sponsors = [
-    "শেখ আজিম","শেখ সোইদুল","ফিরোজ মল্লিক","বোরহান মল্লিক",
-    "সানি মোল্লা","বারেক মল্লিক","রহমান মল্লিক","শেখ সমীর",
-    "শেখ বাবুসোনা","শেখ আক্তার","শেখ হাসিবুল","শেখ রিজুয়ান",
-    "শেখ মহসিন মিদ্দা","শেখ আফসার",
-    "শেখ নজু – গাবতলা, লাইট দিচ্ছে" // ✅ নতুন Sponsor
-  ];
-
-  const sponsorListDiv = document.getElementById('sponsor-list');
-
-  sponsors.forEach(name => {
-    const div = document.createElement('div');
-    div.className = 'sponsor';
-    div.innerHTML = `
-      <span class="sponsor-name">${name}</span>
-      <span class="stars" id="stars-${name}">⭐ 0</span>
-      <button class="star-btn" onclick="giveStar('${name}')">🌟 Star দিন</button>
-    `;
-    sponsorListDiv.appendChild(div);
-
-    db.ref('sponsors/' + name).on('value', snapshot => {
-      const count = snapshot.val() || 0;
-      document.getElementById('stars-' + name).innerText = `⭐ ${count}`;
-    });
-  });
-
-  function giveStar(name) {
-    const starRef = db.ref('sponsors/' + name);
-    starRef.transaction(current => (current || 0) + 1);
-  }
-</script>
+<div class="sponsor-title">🥉 Bronze Sponsor</div>
+<div class="s-card">শেখ মহসিন মিদ্দা — কমেন্টেটর <div class="tag Bronze">Bronze</div></div>
+<div class="s-card">শেখ আফসার — টিফিন <div class="tag Bronze">Bronze</div></div>
 
 <a class="btn" href="https://wa.me/916355526665?text=আমি%20স্পনসর%20হতে%20চাই" target="_blank">✨ স্পনসর করতে চাই</a>
 
@@ -270,8 +240,7 @@ document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000)+" �
     "শেখ আজিম","শেখ সোইদুল","ফিরোজ মল্লিক","বোরহান মল্লিক",
     "সানি মোল্লা","বারেক মল্লিক","রহমান মল্লিক","শেখ সমীর",
     "শেখ বাবুসোনা","শেখ আক্তার","শেখ হাসিবুল","শেখ রিজুয়ান",
-    "শেখ মহসিন মিদ্দা","শেখ আফসার",
-    "শেখ নজু"
+    "শেখ মহসিন মিদ্দা","শেখ আফসার"
   ];
 
   const sponsorListDiv = document.getElementById('sponsor-list');
