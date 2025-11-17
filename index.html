@@ -211,6 +211,81 @@ document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000)+" �
 </div>
 
 </body>
+  <!-- ⚡ Black Force 007 Sponsors Star System Start -->
+<h2 style="text-align:center; margin-top:25px; color:#39ff14;">💎 স্পনসরদের স্টার দিন</h2>
+
+<div id="sponsor-list" style="max-width:900px; margin:auto;">
+  <!-- Sponsors will load here -->
+</div>
+
+<style>
+  .sponsor { background:#022c41; margin:10px 0; padding:12px; border-radius:10px; display:flex; justify-content:space-between; align-items:center; }
+  .sponsor-name { font-weight:700; font-size:16px; color:#39ff14; }
+  .stars { font-size:16px; color:#ffeb57; }
+  .star-btn { background:#39ff14; color:#000; padding:6px 12px; border:none; border-radius:6px; font-weight:700; cursor:pointer; }
+  .star-btn:hover { filter:brightness(1.2); }
+</style>
+
+<script>
+  // 🔹 Firebase Config (তোমার Web App থেকে Ready-to-use)
+  const firebaseConfig = {
+    apiKey: "AIzaSyDAvBXLhFOcFRvfv5mcPDylmNFTU5gFr-Y",
+    authDomain: "blackforce007-cricket-time.firebaseapp.com",
+    databaseURL: "https://blackforce007-cricket-time-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "blackforce007-cricket-time",
+    storageBucket: "blackforce007-cricket-time.firebasestorage.app",
+    messagingSenderId: "215574154214",
+    appId: "1:215574154214:web:0218e9009f5e24de852427",
+    measurementId: "G-149FVV53Y6"
+  };
+
+  // Initialize Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  // স্পনসর লিস্ট
+  const sponsors = [
+    "শেখ আজিম",
+    "শেখ সোইদুল",
+    "ফিরোজ মল্লিক",
+    "বোরহান মল্লিক",
+    "সানি মোল্লা",
+    "বারেক মল্লিক",
+    "রহমান মল্লিক",
+    "শেখ সমীর",
+    "শেখ বাবুসোনা",
+    "শেখ আক্তার",
+    "শেখ হাসিবুল",
+    "শেখ রিজুয়ান",
+    "শেখ মহসিন মিদ্দা",
+    "শেখ আফসার"
+  ];
+
+  const sponsorListDiv = document.getElementById('sponsor-list');
+
+  sponsors.forEach(name => {
+    const div = document.createElement('div');
+    div.className = 'sponsor';
+    div.innerHTML = `
+      <span class="sponsor-name">${name}</span>
+      <span class="stars" id="stars-${name}">⭐ 0</span>
+      <button class="star-btn" onclick="giveStar('${name}')">🌟 Star দিন</button>
+    `;
+    sponsorListDiv.appendChild(div);
+
+    // Real-time listener
+    db.ref('sponsors/' + name).on('value', snapshot => {
+      const count = snapshot.val() || 0;
+      document.getElementById('stars-' + name).innerText = `⭐ ${count}`;
+    });
+  });
+
+  function giveStar(name) {
+    const starRef = db.ref('sponsors/' + name);
+    starRef.transaction(current => (current || 0) + 1);
+  }
+</script>
+<!-- ⚡ Black Force 007 Sponsors Star System End -->
   <!-- ⚡ Black Force 007 Teams Table Start -->
 <div class="teams-container">
   <h3 class="teams-title">🏏 অংশগ্রহণকারী টিমসমূহ 🏏</h3>
